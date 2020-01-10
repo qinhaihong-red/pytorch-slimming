@@ -1,5 +1,16 @@
 ## 使用vgg网络稀疏化训练cifar数据集，随后进行通道剪枝，简洁、清晰。
 
+‘’‘python
+#总的损失为：E=l(x,f(x))+s*sum(g(γ))
+#g(γ)是绝对值函数：g(γ)=|γ|，求导为-1或者1
+#由于s取值比较小（这里为0.0001），对于总体的损失几乎没有影响，因此没有算到总体的损失上面，只是在对γ求导的时候，需要乘以这个系数.
+
+def updateBN():
+    for m in model.modules():
+        if isinstance(m, nn.BatchNorm2d):
+            m.weight.grad.data.add_(args.s*torch.sign(m.weight.data))  # L1函数就是绝对值函数，求导为-1或者1. 再乘上前面的s
+
+'''
 
 # pytorch-slimming
 
