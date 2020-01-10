@@ -1,3 +1,8 @@
+## 使用vgg网络稀疏化训练cifar数据集，随后进行通道剪枝.简洁、清晰。
+
+---
+
+
 # pytorch-slimming
 
 This is a **[PyTorch](http://pytorch.org/)** _re_-implementation of algorithm presented in "[Learning Efficient Convolutional Networks Through Network Slimming](http://openaccess.thecvf.com/content_iccv_2017/html/Liu_Learning_Efficient_Convolutional_ICCV_2017_paper.html) (ICCV2017)." . The official source code is based on Torch. For more info, visit the author's [webpage](https://github.com/liuzhuang13/slimming)!.
